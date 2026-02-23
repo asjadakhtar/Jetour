@@ -1,0 +1,403 @@
+/* body {
+    background-color: #0d0d0d;
+} */
+
+/*CSS for Header Blur */
+#main-header {
+  background-color: transparent !important; /* Keep the actual header element clear */
+}
+
+#main-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25); /* Subtle dark tint */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: -1;
+  transition: all 0.4s ease;
+  pointer-events: none; /* Prevents this layer from blocking clicks */
+}
+
+/* 2. The Hover State: Transition to White */
+/* We only trigger this when the mouse is over the top nav bar, not the whole screen */
+#main-header:hover::before {
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+/* 3. Text Color Change: Sync with background */
+#main-header:hover {
+  color: black !important;
+}
+
+/* 4. MEGA MENU FIX: 
+       When the Mega Menu container is visible, we want to make sure 
+       the header behaves correctly. */
+#mega-menu-container {
+  /* Keep the menu itself blurred so content behind it looks good */
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 5. Logic to prevent the header from staying white if the mouse leaves */
+/* This ensures that if the menu is HIDDEN, the header goes back to transparent */
+#main-header:not(:hover)::before {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/*Animation of Book Now*/
+.btn-hover-animation {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s 0.1s ease-out;
+}
+
+.btn-hover-animation::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 23em;
+  height: 20em;
+  left: -6em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.btn-hover-animation:hover {
+  color: #000 !important;
+  border-color: white !important;
+}
+
+.btn-hover-animation:hover::before {
+  box-shadow: inset 0 0 0 11em white;
+}
+
+/*Animation of black buttons*/
+.btn-hover-animation2 {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s 0.1s ease-out;
+}
+
+.btn-hover-animation2::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 25em;
+  height: 20em;
+  left: -6em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.btn-hover-animation2:hover {
+  color: #fff !important;
+  border-color: black !important;
+}
+
+.btn-hover-animation2:hover::before {
+  box-shadow: inset 0 0 0 11em black;
+}
+
+/*Animation of Express Your Interest*/
+.btn-subtle-lift {
+  transition:
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-subtle-lift:hover {
+  /* The Lift & Shadow */
+  transform: translateY(-4px) !important;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+
+  /* Kill the Tailwind color flash (keeps it settled) */
+  background-color: white !important;
+  color: black !important;
+}
+
+.btn-subtle-lift:active {
+  transform: translateY(-1px) !important;
+}
+
+/*Ater the update in the code 9-02-2026*/
+/*Animation for black button a little lift*/
+.btn-subtle-lift2 {
+  transition:
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-subtle-lift2:hover {
+  /* The Lift & Shadow */
+  transform: translateY(-4px) !important;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
+
+  /* Kill the Tailwind color flash (keeps it settled) */
+  background-color: black !important;
+  color: white !important;
+}
+
+.btn-subtle-lift2:active {
+  transform: translateY(-1px) !important;
+}
+
+
+
+/* Add to your output.css or site.css */
+.news-card img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.container {
+  max-width: 1836px;
+}
+
+/* Custom class for the animated underline */
+.nav-link {
+  position: relative;
+}
+/* The underline itself */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px; /* Thicker line */
+  bottom: -4px; /* Space below text */
+  left: 0;
+  background-color: currentColor; /* Matches text color automatically */
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.car-group {
+  display: none;
+  width: 100%;
+  position: absolute;
+}
+.car-group.active-group {
+  display: flex;
+  position: relative;
+}
+
+/* Initial state for the 'Moving' car */
+.car-move {
+  opacity: 0;
+  transform: translateX(150px); /* Start from the right */
+}
+
+/* Thumbnail Opacity Logic */
+.car-selector {
+  transition: opacity 0.3s ease;
+}
+.car-selector.active-thumb {
+  opacity: 1 !important;
+}
+.car-selector:not(.active-thumb) {
+  opacity: 0.5;
+}
+
+/* Button hover override */
+.button-reveal:hover {
+  background-color: black;
+  color: white;
+  opacity: 1 !important;
+}
+
+.button-reveal1:hover {
+  opacity: 1 !important;
+}
+
+.fp-watermark {
+  display: none;
+}
+
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(120px);
+}
+
+.btn-hover-fix {
+  /* ONLY transition colors. Do NOT use 'all' or 'transform' */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btn-hover-fix:hover {
+  background-color: black;
+  color: white;
+}
+
+.car-display {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+@media (max-width: 400px) {
+  .car-display {
+    width: 600px !important;
+    max-width: 100%;
+  }
+}
+
+/* 1. The hidden state */
+.flash-on-view {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition:
+    opacity 2s ease,
+    transform 2s ease;
+  position: relative;
+  overflow: hidden; /* Keeps the flash light inside the box */
+}
+
+/* 2. The active state (triggered by JS) */
+.flash-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* 3. The White Flash Light Layer */
+.flash-active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 10;
+  pointer-events: none;
+  animation: light-burst 0.6s ease-out forwards;
+}
+
+@keyframes light-burst {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  } /* Sudden bright flash */
+  100% {
+    opacity: 0;
+  } /* Fade out to reveal content */
+}
+
+/* Ensure the slider can scroll */
+#dashing-track {
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overscroll-behavior-x: contain; /* Prevent page scroll */
+}
+
+/* Prevent FullPage from capturing events */
+#dashing-controls button {
+  pointer-events: auto !important;
+  touch-action: auto !important;
+}
+
+/* Keeps text visible and interactive */
+.uf-text-active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+/* Subtle hover effect for text */
+.uf-animate-text:hover {
+  color: #f3f4f6;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.no-flex {
+  display: block !important;
+}
+
+.h-footer {
+  height: auto !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .tab-button {
+      transition: all 0.3s ease;
+    }
+
+    .tab-button.active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Custom scrollbar for tabs container */
+    .tabs-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .tabs-scroll::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .tabs-scroll::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    .tabs-scroll::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }

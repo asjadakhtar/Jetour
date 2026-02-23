@@ -1,0 +1,93 @@
+[
+    {
+        "name": "hero",
+        "title": "Hero Section",
+        "description": "This is the first section of a webpage.",
+        "template": "hero",
+        "keywords": "hero, section, webpage, homepage"
+    },
+    {
+        "name": "about",
+        "title": "About Section",
+        "description": "This is the about section of a webpage.",
+        "template": "about",
+        "keywords": "about, section, webpage"
+    },
+    {
+        "name": "form-vedio",
+        "title": "Form Video Section",
+        "description": "This is the form-vedio section of a webpage.",
+        "template": "form-vedio",
+        "keywords": "form-vedio, section, webpage"
+    },
+    {
+        "name": "travel",
+        "title": "Travel Section",
+        "description": "This is the travel section of a webpage.",
+        "template": "travel",
+        "keywords": "travel, section, webpage"
+    },
+    {
+        "name": "newsletter",
+        "title": "Newsletter Section",
+        "description": "This is the newsletter section of a webpage.",
+        "template": "newsletter",
+        "keywords": "newsletter, section, webpage"
+    },
+    {
+        "name": "car-gallery",
+        "title": "Car Gallery Section",
+        "description": "This is the car-gallery section of a webpage.",
+        "template": "car-gallery",
+        "keywords": "car-gallery, section, webpage"
+    },
+    {
+        "name": "journey",
+        "title": "Journey Section",
+        "description": "This is the journey section of a webpage.",
+        "template": "journey",
+        "keywords": "journey, section, webpage"
+    },
+    {
+        "name": "meet-jetour",
+        "title": "Meet Jetour Section",
+        "description": "This is the meet-jetour section of a webpage.",
+        "template": "meet-jetour",
+        "keywords": "meet-jetour, section, webpage"
+    },
+    {
+        "name": "technology",
+        "title": "Technology Section",
+        "description": "This is the technology section of a webpage.",
+        "template": "technology",
+        "keywords": "technology, section, webpage"
+    },
+    {
+        "name": "news",
+        "title": "News Section",
+        "description": "This is the news section of a webpage.",
+        "template": "news",
+        "keywords": "news, section, webpage"
+    },
+    {
+        "name": "price",
+        "title": "Price Section",
+        "description": "This is the price section of a webpage.",
+        "template": "price",
+        "keywords": "price, section, webpage"
+    },
+    {
+        "name": "contact-us",
+        "title": "Contact Us Section",
+        "description": "This is the contact-us section of a webpage.",
+        "template": "contact-us",
+        "keywords": "contact-us, section, webpage"
+    },
+    {
+        "name": "become-a-dealer",
+        "title": "Become a Dealer Section",
+        "description": "This is the become-a-dealer section of a webpage.",
+        "template": "become-a-dealer",
+        "keywords": "become-a-dealer, section, webpage"
+    }
+]
