@@ -1,0 +1,54 @@
+[
+    {
+        "post_type": "car_models",
+        "slug": "car-models",
+        "supports": ["title", "excerpt", "author", "thumbnail"],
+        "labels": {
+            "name": "Car Models",
+            "add_new_item": "Add Car Model",
+            "edit_item": "Edit Car Model",
+            "all_items": "All Car Models",
+            "singular_name": "Car Model"
+        },
+        "menu_icon": "dashicons-car",
+        "has_featured_option": true,
+        "taxonomy": {
+            "name": "car_model_category",
+            "labels": {
+                "name": "Car Model Categories",
+                "singular_name": "Car Model Category",
+                "menu_name": "Car Model Categories",
+                "all_items": "All Car Model Categories",
+                "add_new_item": "Add New Car Model Category",
+                "edit_item": "Edit Car Model Category",
+                "view_item": "View Car Model Category"
+            }
+        }
+    },
+    {
+        "post_type": "single_booking",
+        "slug": "single-booking",
+        "supports": ["title", "editor", "excerpt", "author", "thumbnail"],
+        "labels": {
+            "name": "Single Bookings",
+            "singular_name": "Single Booking",
+            "add_new_item": "Add New Booking",
+            "edit_item": "Edit Booking",
+            "all_items": "All Bookings"
+        },
+        "menu_icon": "dashicons-calendar-alt",
+        "has_featured_option": true,
+        "taxonomy": {
+            "name": "booking_category",
+            "labels": {
+                "name": "Booking Categories",
+                "singular_name": "Booking Category",
+                "menu_name": "Booking Categories",
+                "all_items": "All Booking Categories",
+                "add_new_item": "Add New Booking Category",
+                "edit_item": "Edit Booking Category",
+                "view_item": "View Booking Category"
+            }
+        }
+    }
+]
