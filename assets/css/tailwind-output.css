@@ -340,9 +340,6 @@
   .z-10000 {
     z-index: 10000;
   }
-  .order-1 {
-    order: 1;
-  }
   .order-2 {
     order: 2;
   }
@@ -2015,11 +2012,6 @@
   .md\:order-1 {
     @media (width >= 48rem) {
       order: 1;
-    }
-  }
-  .md\:order-2 {
-    @media (width >= 48rem) {
-      order: 2;
     }
   }
   .md\:mt-6 {
