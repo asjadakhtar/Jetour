@@ -417,7 +417,7 @@ var myFullpage = new fullpage("#fullpage", {
   responsiveWidth: 0,
 
   // ✅ INNER SCROLL AREAS
-  scrollOverflow: true,
+  scrollOverflow: false,
   scrollOverflowOptions: {
     click: true,
     bounce: false,
@@ -526,6 +526,7 @@ setInterval(function () {
     fullpage_api.moveSlideRight();
   }
 }, 5000);
+
 
 
 

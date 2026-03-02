@@ -345,7 +345,12 @@
 
 
 
-
+img {
+  pointer-events: none;
+}
+svg {
+  pointer-events: none;
+}
 
 
 
