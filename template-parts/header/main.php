@@ -1,6 +1,6 @@
 <header
       id="main-header"
-      class="fixed top-0 left-0 w-full z-9999 py-5 font-primary text-base font-medium bg-black/30 text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-xl"
+      class="fixed top-0 left-0 w-full z-9999 sm:py-5 py-2 font-primary text-base font-medium bg-black/30 text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-xl"
     >
       <div class="container mx-auto px-4 flex items-center justify-between relative z-10">
         <div class="flex items-center gap-x-17.5">
@@ -11,7 +11,7 @@
               viewBox="0 0 209 40"
               width="209"
               height="40"
-              class="w-45"
+              class="sm:w-45 w-32"
             >
               <g fill="none">
                 <path
