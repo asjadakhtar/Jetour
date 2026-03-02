@@ -232,7 +232,7 @@
         >
           <div class="w-24">
             <!-- Place your JETOUR logo here -->
-            <a href="#">
+            <a href="https://jetour.diginest.co/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 209 40"
@@ -279,7 +279,7 @@
               <div class="accordion-content hidden pt-8">
                 <!-- Two-column grid for cars -->
                 <div class="grid grid-cols-2 gap-x-4 gap-y-8">
-                  <a href="#" class="flex flex-col">
+                  <a href="https://jetour.diginest.co/car-models/dashing/" class="flex flex-col">
                     <div class="bg-gray-50 rounded-sm mb-3">
                       <img
                         src="https://jetour.diginest.co/wp-content/uploads/2026/01/dashing.webp"
@@ -341,7 +341,7 @@
                       </g>
                     </svg>
                   </a>
-                  <a href="#" class="flex flex-col">
+                  <a href="https://jetour.diginest.co/car-models/x70-plus/" class="flex flex-col">
                     <div class="bg-gray-50 rounded-sm mb-3">
                       <img
                         src="https://jetour.diginest.co/wp-content/uploads/2026/01/x70plus.webp"
