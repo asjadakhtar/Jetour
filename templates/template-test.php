@@ -6,6 +6,7 @@ get_header();
 ?>
   <div id="fullpage">
     <?php the_content(); ?>
+
+    <?php get_footer(); ?>
   </div>
 
-<?php get_footer(); ?>

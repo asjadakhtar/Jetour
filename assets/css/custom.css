@@ -406,3 +406,10 @@ svg {
 .tabs-scroll::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+
+
+.site-footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}

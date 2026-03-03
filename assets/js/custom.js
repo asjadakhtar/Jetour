@@ -425,7 +425,7 @@ var myFullpage = new fullpage("#fullpage", {
   },
 
   // allow normal scroll areas
-  normalScrollElements: ".scroll-section, footer",
+  normalScrollElements: ".footer-section, footer",
 
   // ===============================
   // AFTER SECTION LOAD
