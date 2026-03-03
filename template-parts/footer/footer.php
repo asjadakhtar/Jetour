@@ -1,5 +1,5 @@
-<div class="section footer-section fp-auto-height site-footer">
-    <footer class=" bg-white text-black pt-16 pb-8  border-t border-gray-100 font-primary">
+<div class="section footer-section fp-auto-height">
+    <footer class="site-footer bg-white text-black pt-16 pb-8  border-t border-gray-100 font-primary">
         <div class="container mx-auto px-4">
             
             <!-- Parent Div with justify-between -->

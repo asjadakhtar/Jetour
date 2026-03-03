@@ -412,37 +412,20 @@ var myFullpage = new fullpage("#fullpage", {
   controlArrows: false,
   loopHorizontal: true,
 
-  // ✅ MOBILE FIXES
+  // Mobile smoothness
   touchSensitivity: 15,
   responsiveWidth: 0,
 
-  // ✅ INNER SCROLL AREAS
+  // IMPORTANT
   scrollOverflow: false,
-  scrollOverflowOptions: {
-    click: true,
-    bounce: false,
-    eventPassthrough: "horizontal"  // ✅ FIX: touch events block nahi hote
-  },
 
-  // allow normal scroll areas
+  // Allow footer natural behaviour
   normalScrollElements: ".footer-section, footer",
 
   // ===============================
   // AFTER SECTION LOAD
   // ===============================
   afterLoad: function (origin, destination, direction) {
-
-    // ✅ LAST SECTION (FOOTER SCROLL ENABLE)
-    if (destination.isLast) {
-      setTimeout(() => {
-        fullpage_api.setAutoScrolling(false);
-        fullpage_api.setFitToSection(false);
-      }, 600); // ✅ FIX: 100 → 600 — mobile par touch event settle hone ka waqt milta hai
-
-    } else {
-      fullpage_api.setAutoScrolling(true);
-      fullpage_api.setFitToSection(true);
-    }
 
     // ===== CAR SECTION ANIMATION =====
     if (destination.item.classList.contains("car-section")) {
@@ -452,12 +435,14 @@ var myFullpage = new fullpage("#fullpage", {
       }
     }
 
-    // ===== NORMAL GSAP SECTIONS =====
+    // ===== GSAP NORMAL SECTIONS =====
     else {
       const activeSlide = destination.item.querySelector(".slide.active");
+
       if (activeSlide && typeof runGsapAnimation === "function") {
         runGsapAnimation(activeSlide);
-      } else if (typeof runGsapAnimation === "function") {
+      } 
+      else if (typeof runGsapAnimation === "function") {
         runGsapAnimation(destination.item);
       }
     }
@@ -468,11 +453,7 @@ var myFullpage = new fullpage("#fullpage", {
   // ===============================
   onLeave: function (origin, destination, direction) {
 
-    // ✅ FIX: Immediately re-enable — setTimeout nahi, warna mobile touch block rehta hai
-    fullpage_api.setAutoScrolling(true);
-    fullpage_api.setFitToSection(true);
-
-    // reset car animation
+    // Reset car animation
     if (
       origin.item.classList.contains("car-section") &&
       typeof resetCarAnimation === "function"
@@ -480,6 +461,7 @@ var myFullpage = new fullpage("#fullpage", {
       resetCarAnimation(origin.item);
     }
 
+    // Reset GSAP
     if (typeof resetGsapAnimation === "function") {
       resetGsapAnimation(origin.item);
     }
@@ -503,28 +485,30 @@ var myFullpage = new fullpage("#fullpage", {
 
 
 // ===============================
-// CUSTOM ARROWS
+// CUSTOM SLIDER ARROWS
 // ===============================
-document.getElementById("prevArrow")?.addEventListener("click", () => {
+document.getElementById("prevArrow")?.addEventListener("click", function () {
   fullpage_api.moveSlideLeft();
 });
 
-document.getElementById("nextArrow")?.addEventListener("click", () => {
+document.getElementById("nextArrow")?.addEventListener("click", function () {
   fullpage_api.moveSlideRight();
 });
 
 
 // ===============================
-// AUTO SLIDE (ONLY WHEN SLIDES EXIST)
+// AUTO SLIDE (ONLY IF SLIDES EXIST)
 // ===============================
 setInterval(function () {
   const activeSection = fullpage_api.getActiveSection();
+
   if (
     activeSection &&
     activeSection.item.querySelectorAll(".slide").length > 0
   ) {
     fullpage_api.moveSlideRight();
   }
+
 }, 5000);
 
 
