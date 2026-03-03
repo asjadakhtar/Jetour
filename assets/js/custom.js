@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
 var myFullpage = new fullpage("#fullpage", {
   licenseKey: "gplv3-license",
 
-  // Core settings
+  // Core
   autoScrolling: true,
   fitToSection: true,
   scrollingSpeed: 1000,
@@ -416,32 +416,30 @@ var myFullpage = new fullpage("#fullpage", {
   touchSensitivity: 15,
   responsiveWidth: 0,
 
-  // IMPORTANT
+  // Important
   scrollOverflow: false,
-
-  // Allow footer natural behaviour
-  normalScrollElements: ".footer-section, footer",
 
   // ===============================
   // AFTER SECTION LOAD
   // ===============================
   afterLoad: function (origin, destination, direction) {
 
-    // ===== CAR SECTION ANIMATION =====
+    // ===== CAR SECTION =====
     if (destination.item.classList.contains("car-section")) {
       const activeGroup = destination.item.querySelector(".car-group.active-group");
+
       if (activeGroup && typeof runCarAnimation === "function") {
         runCarAnimation(activeGroup);
       }
     }
 
-    // ===== GSAP NORMAL SECTIONS =====
+    // ===== NORMAL / GSAP SECTIONS =====
     else {
       const activeSlide = destination.item.querySelector(".slide.active");
 
       if (activeSlide && typeof runGsapAnimation === "function") {
         runGsapAnimation(activeSlide);
-      } 
+      }
       else if (typeof runGsapAnimation === "function") {
         runGsapAnimation(destination.item);
       }
@@ -453,7 +451,7 @@ var myFullpage = new fullpage("#fullpage", {
   // ===============================
   onLeave: function (origin, destination, direction) {
 
-    // Reset car animation
+    // Reset Car Animation
     if (
       origin.item.classList.contains("car-section") &&
       typeof resetCarAnimation === "function"
@@ -500,6 +498,7 @@ document.getElementById("nextArrow")?.addEventListener("click", function () {
 // AUTO SLIDE (ONLY IF SLIDES EXIST)
 // ===============================
 setInterval(function () {
+
   const activeSection = fullpage_api.getActiveSection();
 
   if (
