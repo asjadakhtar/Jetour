@@ -468,14 +468,14 @@ get_header(); ?>
 
     <!-- TITLE -->
     <?php if(!empty($spec['section_title'])): ?>
-    <div class="text-4xl font-medium pb-12 text-center">
+    <div class="text-2xl sm:text-4xl font-medium pb-12 text-center mt-16 md:mt-0">
         <?php echo esc_html($spec['section_title']); ?>
     </div>
     <?php endif; ?>
 
 
     <!-- TAB BUTTONS -->
-    <div class="mb-8 overflow-x-auto tabs-scroll">
+    <div class="mb-8 overflow-x-auto tabs-scroll no-scrollbar">
     <div class="flex gap-3 justify-center flex-wrap min-w-max md:min-w-0">
 
     <?php 
@@ -485,7 +485,7 @@ get_header(); ?>
     ?>
     <button
     onclick="openTab('<?php echo esc_attr($tab['tab_slug']); ?>')"
-    class="tab-button px-6 py-3 rounded-full text-base font-medium border-2 border-black
+    class="tab-button px-4 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-full font-medium border-2 border-black
     <?php echo ($i==0) ? 'active bg-black text-white' : 'bg-white text-black'; ?>">
     <?php echo esc_html($tab['tab_title'] ?? 'Tab'); ?>
     </button>
