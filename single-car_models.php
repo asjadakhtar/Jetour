@@ -268,7 +268,7 @@ get_header(); ?>
 
                 <!-- STATIC OVERLAY & HEADER -->
                 <div class="absolute inset-0 z-30 pointer-events-none flex justify-center">
-                    <p class="gsap-reveal text-white font-medium text-3xl md:text-5xl lg:text-6xl pt-10 md:pt-20 lg:pt-30">
+                    <p class="gsap-reveal text-white font-medium text-3xl md:text-5xl lg:text-6xl pt-20 lg:pt-30">
                         <?php
                             $uf_heading = '';
 
@@ -337,7 +337,7 @@ get_header(); ?>
 
                 <!-- STATIC OVERLAY & HEADER -->
                <div class="absolute inset-0 z-30 pointer-events-none flex justify-center">
-                    <p class="gsap-reveal text-white font-medium text-3xl md:text-5xl lg:text-6xl pt-10 md:pt-20 lg:pt-30">
+                    <p class="gsap-reveal text-white font-medium text-3xl md:text-5xl lg:text-6xl pt-20 lg:pt-30">
                         <?php
                             $uf_heading = '';
 
