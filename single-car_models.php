@@ -113,7 +113,7 @@ get_header(); ?>
         <div class="container mx-auto px-4 flex flex-col justify-between h-full w-full py-10 md:py-16">
 
             <!-- 1. TOP ROW: Button on the Right -->
-            <div class="flex justify-end md:justify-end items-start w-full gap-3 mt-16 md:mt-0">
+            <div class="flex sm:justify-end justify-end items-start w-full gap-3 mt-16 md:mt-0">
 
                 <?php if (!empty($color_section['spec_link'])) : ?>
                     <a
