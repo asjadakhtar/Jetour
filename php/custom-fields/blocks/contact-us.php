@@ -60,7 +60,7 @@
               </div>
 
               <h3 class="text-2xl font-bold text-gray-800 mb-4">Phone</h3>
-              <p class="text-xl text-gray-700 font-medium">+92 304 1112777</p>
+              <p class="text-xl text-gray-700 font-medium">+92 323 7612009</p>
             </div>
 
             <!-- Email Card -->
@@ -87,7 +87,7 @@
               </div>
               <h3 class="text-2xl font-bold text-gray-800 mb-4">Email</h3>
               <p class="text-xl text-gray-700 font-medium">
-                info@jetour.com.pk
+                info.jetour@westcanalmotors.com.pk
               </p>
             </div>
 
@@ -122,7 +122,7 @@
               <h3 class="text-2xl font-bold text-gray-800 mb-2">Address</h3>
               <p class="text-lg text-gray-700 font-medium leading-snug">
                 West Canal Road,<br />
-                Dastageer Colony,<br />
+                Near Zoom Marquee,<br />
                 Faisalabad
               </p>
             </div>
