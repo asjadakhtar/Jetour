@@ -120,107 +120,106 @@ get_header(); ?>
     ?>
 
     <section class="section">
-    <section class="max-w-4xl px-4 mx-auto py-10 mt-20">
+      <section class="max-w-4xl px-4 mx-auto py-10 mt-20">
 
-    <!-- TITLE -->
-    <?php if(!empty($spec['section_title'])): ?>
-    <div class="text-4xl font-medium pb-12 text-center">
-        <?php echo esc_html($spec['section_title']); ?>
-    </div>
-    <?php endif; ?>
-
-
-    <!-- TAB BUTTONS -->
-    <div class="mb-8 overflow-x-auto tabs-scroll">
-    <div class="flex gap-3 justify-center flex-wrap min-w-max md:min-w-0">
-
-    <?php 
-    $i = 0;
-    foreach($spec['spec_tabs'] as $tab): 
-    if(empty($tab['tab_slug'])) continue;
-    ?>
-    <button
-    onclick="openTab('<?php echo esc_attr($tab['tab_slug']); ?>')"
-    class="tab-button px-6 py-3 rounded-full text-base font-medium border-2 border-black
-    <?php echo ($i==0) ? 'active bg-black text-white' : 'bg-white text-black'; ?>">
-    <?php echo esc_html($tab['tab_title'] ?? 'Tab'); ?>
-    </button>
-    <?php $i++; endforeach; ?>
-
-    </div>
-    </div>
+        <!-- TITLE -->
+        <?php if(!empty($spec['section_title'])): ?>
+        <div class="text-4xl font-medium pb-12 text-center">
+            <?php echo esc_html($spec['section_title']); ?>
+        </div>
+        <?php endif; ?>
 
 
-    <!-- TAB CONTENT -->
-    <div class="bg-white rounded-lg border-2 border-black/20 p-6" style="min-height:520px;">
+        <!-- TAB BUTTONS -->
+        <div class="mb-8 overflow-x-auto tabs-scroll">
+        <div class="flex gap-3 justify-center flex-wrap min-w-max md:min-w-0">
 
-    <?php 
-    $i = 0;
-    foreach($spec['spec_tabs'] as $tab):
+        <?php 
+        $i = 0;
+        foreach($spec['spec_tabs'] as $tab): 
+        if(empty($tab['tab_slug'])) continue;
+        ?>
+        <button
+        onclick="openTab('<?php echo esc_attr($tab['tab_slug']); ?>')"
+        class="tab-button px-6 py-3 rounded-full text-base font-medium border-2 border-black
+        <?php echo ($i==0) ? 'active bg-black text-white' : 'bg-white text-black'; ?>">
+        <?php echo esc_html($tab['tab_title'] ?? 'Tab'); ?>
+        </button>
+        <?php $i++; endforeach; ?>
 
-    if(empty($tab['tab_rows'])) continue;
+        </div>
+        </div>
 
-    $cols = $tab['table_columns'] ?? '2';
-    ?>
+        <!-- TAB CONTENT -->
+        <div class="bg-white rounded-lg border-2 border-black/20 p-6" style="min-height:520px;">
 
-    <div id="<?php echo esc_attr($tab['tab_slug']); ?>"
-    class="tab-content <?php echo ($i==0)?'active':''; ?>">
+          <?php 
+          $i = 0;
+          foreach($spec['spec_tabs'] as $tab):
 
-    <table class="w-full border-collapse border border-slate-200 text-lg text-black">
-    <tbody>
+          if(empty($tab['tab_rows'])) continue;
 
-    <?php 
-    $row_index = 0;
-    foreach($tab['tab_rows'] as $row):
+          $cols = $tab['table_columns'] ?? '2';
+          ?>
 
-    $bg = ($row_index % 2 == 0) ? 'bg-[#f6f6f6]' : '';
-    ?>
+          <div id="<?php echo esc_attr($tab['tab_slug']); ?>"
+          class="tab-content <?php echo ($i==0)?'active':''; ?>">
 
-    <tr>
+          <table class="w-full border-collapse border border-slate-200 text-lg text-black">
+          <tbody>
 
-    <?php if($cols == '2'): ?>
+          <?php 
+          $row_index = 0;
+          foreach($tab['tab_rows'] as $row):
 
-    <td class="border border-slate-200 p-3 w-1/2 <?php echo $bg; ?>">
-    <?php echo !empty($row['col_1']) ? esc_html($row['col_1']) : '●'; ?>
-    </td>
+          $bg = ($row_index % 2 == 0) ? 'bg-[#f6f6f6]' : '';
+          ?>
 
-    <td class="border border-slate-200 p-3 w-1/2 <?php echo $bg; ?>">
-    <?php echo !empty($row['col_2']) ? esc_html($row['col_2']) : '●'; ?>
-    </td>
+          <tr>
 
-    <?php else: ?>
+          <?php if($cols == '2'): ?>
 
-    <td class="border border-slate-200 p-3 w-1/4 <?php echo $bg; ?>">
-    <?php echo !empty($row['col_1']) ? esc_html($row['col_1']) : '●'; ?>
-    </td>
+          <td class="border border-slate-200 p-3 w-1/2 <?php echo $bg; ?>">
+          <?php echo !empty($row['col_1']) ? esc_html($row['col_1']) : '●'; ?>
+          </td>
 
-    <td class="border border-slate-200 p-3 w-1/4 <?php echo $bg; ?>">
-    <?php echo !empty($row['col_2']) ? esc_html($row['col_2']) : '●'; ?>
-    </td>
+          <td class="border border-slate-200 p-3 w-1/2 <?php echo $bg; ?>">
+          <?php echo !empty($row['col_2']) ? esc_html($row['col_2']) : '●'; ?>
+          </td>
 
-    <td class="border border-slate-200 p-3 w-1/4 <?php echo $bg; ?>">
-    <?php echo !empty($row['col_3']) ? esc_html($row['col_3']) : '●'; ?>
-    </td>
+          <?php else: ?>
 
-    <td class="border border-slate-200 p-3 w-1/4 <?php echo $bg; ?>">
-    <?php echo !empty($row['col_4']) ? esc_html($row['col_4']) : '●'; ?>
-    </td>
+          <td class="border border-slate-200 p-3 w-1/4 <?php echo $bg; ?>">
+          <?php echo !empty($row['col_1']) ? esc_html($row['col_1']) : '●'; ?>
+          </td>
 
-    <?php endif; ?>
+          <td class="border border-slate-200 p-3 w-1/4 <?php echo $bg; ?>">
+          <?php echo !empty($row['col_2']) ? esc_html($row['col_2']) : '●'; ?>
+          </td>
 
-    </tr>
+          <td class="border border-slate-200 p-3 w-1/4 <?php echo $bg; ?>">
+          <?php echo !empty($row['col_3']) ? esc_html($row['col_3']) : '●'; ?>
+          </td>
 
-    <?php $row_index++; endforeach; ?>
+          <td class="border border-slate-200 p-3 w-1/4 <?php echo $bg; ?>">
+          <?php echo !empty($row['col_4']) ? esc_html($row['col_4']) : '●'; ?>
+          </td>
 
-    </tbody>
-    </table>
+          <?php endif; ?>
 
-    </div>
+          </tr>
 
-    <?php $i++; endforeach; ?>
+          <?php $row_index++; endforeach; ?>
 
-    </div>
-    </section>
+          </tbody>
+          </table>
+
+          </div>
+
+          <?php $i++; endforeach; ?>
+
+        </div>
+      </section>
     </section>
 
     <?php endif; ?>
